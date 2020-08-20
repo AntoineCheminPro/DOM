@@ -1,28 +1,14 @@
-let listItems = document.getElementsByClassName("list-item");
-for (const ITEM of listItems) {
-    ITEM.addEventListener("click", function() {
-        if (this.style.textDecoration !== "line-through"){
-        this.style.textDecoration = "line-through";
-        }
-        else {
-            this.style.textDecoration = "none";
-        }
-    });
-}
 
 // création d'une liste
 let mainContainer = document.getElementsByTagName("main")[0];
-
 let liste = document.createElement("ul");
 liste.id = "exemple";   
+let input = document.getElementsByTagName("input")[0];
 
 
 function submit(){
-        let input = document.getElementsByTagName("input")[0];
         let listeItem = document.createElement("li")
-        listeItem.classList.add("list-item");
         listeItem.innerText = input.value;
-        let listItems = document.getElementsByClassName("list-item");
         listeItem.addEventListener("click", function() {
                 if (this.style.textDecoration !== "line-through"){
                 this.style.textDecoration = "line-through";
@@ -32,8 +18,16 @@ function submit(){
                 }
             });
         liste.appendChild(listeItem);
+        listeItem.style.listStyle="decimal";
         mainContainer.append(liste);
         input.value = "";
 }
 
-input.addEventListener("keypress==13", submit());
+input.onkeyup = function(event) {
+    if(event.keyCode === 13) {
+        let listeItem = input.value;
+        if(listeItem.length > 0) {
+            submit(listeItem);
+        }
+    }
+};
