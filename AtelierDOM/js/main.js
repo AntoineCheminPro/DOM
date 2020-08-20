@@ -60,3 +60,25 @@ function submit(){
     p.innerText = input.value;
     input.value = "";
 }
+
+// affichage différé
+
+setTimeout(function(){
+siteTitle.style.opacity = 1;
+},1000);
+
+let headerP = document.querySelector("header p.lead");
+
+setTimeout(function(){
+    headerP.style.opacity = 1;
+    },2500);
+
+// affichage à interval régulier
+let timer = document.getElementById("timer");
+let sec = 0;
+setInterval(function() {
+    sec++;
+    timer.innerText = sec;
+    console.log(timer);
+}, 1000);
+

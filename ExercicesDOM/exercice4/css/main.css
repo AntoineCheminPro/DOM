@@ -86,21 +86,6 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-  #helpButton {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  header h1, header .lead {
-    opacity: 0;
-    transition: opacity 2s;
-  }
-
-  header h1:hover {
-    opacity: 1;
-  }
-
 
 /* ==========================================================================
    Helper classes
